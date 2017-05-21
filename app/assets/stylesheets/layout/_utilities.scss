@@ -23,3 +23,101 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+// Font
+
+h2 {
+  margin: 50px auto;
+  margin-bottom: 30px;
+  margin-left: 0px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+p {
+  margin: 0px auto;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.full-screen {
+  height: calc(100vh - 130px);
+}
+
+.button-action {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: $sunglow;
+  color: $puce;
+  font-size: 14px;
+  border: 2px solid $sunglow;
+}
+
+.button-action:hover {
+  color: $puce;
+  background: $sunglow;
+  border-color: $puce;
+}
+
+.button-action-item {
+  flex: 0 1 auto;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.no-marged-left {
+  margin-left: 0px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexbox {
+  position: relative;
+  height: calc(100vh - 130px)
+}
+
+.flex-items {
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+}
+
+.flex-items-form {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+}
+
+.marged-top {
+  margin-top: 160px;
+}
+
+@media (min-width: 1024px) {
+  .half-image {
+    height: calc(100vh - 130px);
+    width: 50vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .half-image {
+    height: 200px;
+    width: 100vw;
+  }
+}
+

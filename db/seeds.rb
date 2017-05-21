@@ -15,19 +15,20 @@ Dose.destroy_all
 
 # Import of ingredients
 
-url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-ingredient_serialized = open(url).read
-ingredient = JSON.parse(ingredient_serialized)
+# url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# ingredient_serialized = open(url).read
+# ingredient = JSON.parse(ingredient_serialized)
 
-ingredient["drinks"].each do |drink_hash|
-  Ingredient.create(name: drink_hash["strIngredient1"])
-  # Ingredient.create!(a['name'], without_protection: true)
-end
+# ingredient["drinks"].each do |drink_hash|
+#   Ingredient.create(name: drink_hash["strIngredient1"])
+#   # Ingredient.create!(a['name'], without_protection: true)
+# end
 
-# Import of Cocktails
+# # Import of Cocktails
 
-Cocktail.create(name: 'Mojito')
-Cocktail.create(name: 'Blue Lagoon')
-Cocktail.create(name: 'Tequila Sunrise')
-Cocktail.create(name: 'Daikiri')
-Cocktail.create(name: 'Caipirinha')
+# Cocktail.create(name: 'Mojito')
+# Cocktail.create(name: 'Blue Lagoon')
+# Cocktail.create(name: 'Tequila Sunrise')
+# Cocktail.create(name: 'Daikiri')
+# Cocktail.create(name: 'Caipirinha')
+

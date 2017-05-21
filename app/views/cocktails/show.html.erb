@@ -1,21 +1,45 @@
-<h2><%= @cocktail.name %></h2>
-<%= link_to "Delete cocktail", cocktail_path(@cocktail),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back", cocktails_path %>
-
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
-    <p><%= link_to "Delete dose", dose_path(dose),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></p>
-  <% end %>
-</ul>
-
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :ingredient_id, collection: @ingredients %>
-  <%= f.submit "Add dose", class: "btn btn-primary" %>
-<% end %>
+<div class="full-screen">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 no-padding">
+        <div>
+          <% if @cocktail.photo? %>
+          <%= cl_image_tag @cocktail.photo.path, crop: :fit, class: "half-image" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="flexbox">
+          <div class="title">
+            <h2><%= @cocktail.name %></h2>
+  <!--           <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "button-action button-action-item btn add" %>
+   -->        </div>
+          <h3>Ingredients</h3>
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+            <%= render "shared/list", dose: dose %>
+            <% end %>
+          </ul>
+          <div class="add-dose-dynamic flex-items-form">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-md-offset-1">
+                <%= simple_form_for [@cocktail, @dose] do |f| %>
+                <%= f.input :description %>
+                <%= f.input :ingredient_id, collection: @ingredients %>
+                <%= f.submit "Add dose", class: "button-action button-action-item btn no-marged-left" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="title flex-items">
+            <%= link_to "Delete cocktail", cocktail_path(@cocktail),
+            class: "button-action button-action-item btn",
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+              <%= link_to "Back", cocktails_path, class: "button-action button-action-item btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="list">
+  <p><%= dose.description %> of <%= dose.ingredient.name %></p>
+  <p><%= link_to "", dose_path(dose),
+    class: "fa fa-times",
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></p>
+</div>

@@ -1,1 +1,30 @@
-// Your footer style
+#footer {
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  left: 0px;
+  right: 0px;
+  bottom: -60px;
+  background-color: $sunglow;
+  height: 60px;
+  display: flex;
+}
+
+#footer p {
+  margin-right: 15px;
+  color: $puce;
+}
+
+#footer ul {
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+
+#footer li {
+  color: $puce;
+  opacity: 1;
+}
+#footer li:hover {
+  opacity: 0.8;
+  color:  $taupe;
+}
